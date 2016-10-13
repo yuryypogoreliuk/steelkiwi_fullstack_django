@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- Flatly Bootstrap theme -->
+    <link rel="stylesheet" href="/static/css/flatly.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+
+    {% include '__layout/navbar.html' %}
+
+    {% block content %}{% endblock %}
+
+    {% include '__layout/footer.html' %}
+
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js></script>
+    <script>window.jQuery||document.write('<script src="/static/js/jquery.min.js"><\/script>')</script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- Custom javascript -->
+    <script src="/static/js/steelkiwi.js"></script>
+</body>
+</html>

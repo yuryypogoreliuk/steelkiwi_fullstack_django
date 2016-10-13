@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for category in categories %}
+        <div  class="category">
+            <div class="name">
+                <li><a href="/products/{{ category.slug }}">{{ category.name }}</a></li>
+            </div>
+            <div class="description">
+                <p>{{ category.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
