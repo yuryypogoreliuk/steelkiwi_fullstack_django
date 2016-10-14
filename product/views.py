@@ -34,11 +34,17 @@ class ProductView(ListView):
 
 class LatestProductsView(ListView):
 
-    #model = Product
+    model = Product
     template_name = 'latest_products.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        print locals()
+        print 3
+        return super(LatestProductsView, self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self, *args, **kwargs):
         one_day = timezone.now() - datetime.timedelta(days=1)
-        qs = Product.objects.filter(created_at__gte=one_day)
-        return qs
+        return Product.objects.filter(created_at__gte=one_day)
+        # print qs
+        # return qs
 

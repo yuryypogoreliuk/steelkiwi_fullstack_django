@@ -25,8 +25,8 @@ urlpatterns = [
     ),
     #     # /products/live/
     url(
-        r'^live/$',
-        login_required(LatestProductsView.as_view()),
+        r'^/live/$',
+        LatestProductsView.as_view(),
         name='latest_24_hours_products'
     )
 ]
