@@ -2,19 +2,15 @@
 
 {% block content %}
 
-    {% for product in product_list %}
-        <div  class="product">
-            <div class="name">
-                <li><a href="/products/category/{{ product.slug }}">{{ product.name }}</a></li>
+        {% for product in product_list %}
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                <h3 class="panel-title">{{ product.name }} Costs {{ product.price }}</h3>
+                </div>
+                <div class="panel-body">
+                    {{ product.description }}
+                </div>
             </div>
-            <div class="description">
-                <p>{{ product.description }}</p>
-            </div>
-            <div class="price">
-                <p>{{ product.price }}</p>
-            </div>
-
-        </div>
-    {% endfor %}
+        {% endfor %}
 
 {% endblock %}

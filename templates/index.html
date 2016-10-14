@@ -2,15 +2,16 @@
 
 {% block content %}
 
-    {% for category in categories %}
-        <div  class="category">
-            <div class="name">
-                <li><a href="/products/{{ category.slug }}">{{ category.name }}</a></li>
+    {% for category in object_list %}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+            <h3 class="panel-title"><a href="{{ category.slug }}">{{ category.name }}</a></h3>
             </div>
-            <div class="description">
-                <p>{{ category.description }}</p>
+            <div class="panel-body">
+                {{ category.description }}
             </div>
         </div>
+
     {% endfor %}
 
 {% endblock %}

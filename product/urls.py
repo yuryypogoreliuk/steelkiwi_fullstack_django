@@ -5,10 +5,30 @@ from django.conf import settings
 from .views import IndexView, CategoryView, ProductView, LatestProductsView
 
 urlpatterns = [
-    url(r'^/$', IndexView.as_view(), name='index'),
-    url(r'^(?P<category_slug>[a-zA-Z0-9_\-]*)/$', CategoryView.as_view(), name='category'),
-    url(r'^(?P<category_slug>[a-zA-Z0-9_\-]*)/(?P<product_slug>[a-zA-Z0-9_\-]*)/$', ProductView.as_view(), name='product'),
-    url(r'^live/$', login_required(LatestProductsView.as_view()), name='latest_24_hours_products')
+    # /products/
+    url(
+        r'^$',
+        IndexView.as_view(),
+        name='index'
+    ),
+    # /products/<category_slug>/
+    url(
+        r'^(?P<category_slug>[a-zA-Z0-9_\-]*)/$',
+        CategoryView.as_view(),
+        name='category'
+    ),
+    # /products/<category_slug>/<product_slug>
+    url(
+        r'^(?P<category_slug>[a-zA-Z0-9_\-]*)/(?P<product_slug>[a-zA-Z0-9_\-]*)/$',
+        ProductView.as_view(),
+        name='product'
+    ),
+    #     # /products/live/
+    url(
+        r'^live/$',
+        login_required(LatestProductsView.as_view()),
+        name='latest_24_hours_products'
+    )
 ]
 
 if settings.DEBUG:

@@ -36,9 +36,9 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
-    def get_latest_products(self):
+    def was_created_recently(self):
         one_day = timezone.now() - datetime.timedelta(days=1)
-        return Product.objects.filter(created_at__gte=one_day)
+        return self.pub_date >= one_day
 
     class Meta:
         get_latest_by = 'created_at'
