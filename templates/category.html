@@ -5,7 +5,7 @@
         {% for product in product_list %}
             <div class="panel panel-success">
                 <div class="panel-heading">
-                <h3 class="panel-title">{{ product.name }} Costs {{ product.price }}</h3>
+                <h3 class="panel-title"><a href="{{ product.slug }}">{{ product.name }}</a> Costs {{ product.price }}</h3>
                 </div>
                 <div class="panel-body">
                     {{ product.description }}
