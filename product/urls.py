@@ -25,7 +25,7 @@ urlpatterns = [
     ),
     #     # /products/live/
     url(
-        r'^/live/$',
+        r'^live/$',
         LatestProductsView.as_view(),
         name='latest_24_hours_products'
     )
