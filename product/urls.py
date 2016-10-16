@@ -1,5 +1,5 @@
 from django.conf.urls import url, include, patterns
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
 from .views import IndexView, CategoryView, ProductView, LatestProductsView
@@ -10,6 +10,13 @@ urlpatterns = [
         r'^$',
         IndexView.as_view(),
         name='index'
+    ),
+
+    # /products/live/
+    url(
+        r'^live/$',
+        LatestProductsView.as_view(),
+        name='latest_products'
     ),
     # /products/<category_slug>/
     url(
@@ -23,12 +30,8 @@ urlpatterns = [
         ProductView.as_view(),
         name='product'
     ),
-    #     # /products/live/
-    url(
-        r'^live/$',
-        LatestProductsView.as_view(),
-        name='latest_24_hours_products'
-    )
+    #
+
 ]
 
 if settings.DEBUG:

@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ product.name }} View{% endblock %}
+
 {% block content %}
     {% with product=object_list %}
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h3 class="panel-title"><a href="{{ product.slug }}">{{ product.name }}</a> Costs {{ product.price }}</h3>
+            <h3 class="panel-title">{{ product.name }} ({{ product.price }})</h3>
         </div>
         <div class="panel-body">
             {{ product.description }}

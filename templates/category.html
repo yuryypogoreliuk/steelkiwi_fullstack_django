@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-
+{% block title %}Category View{% endblock %}
 {% block content %}
 
         {% for product in product_list %}
             <div class="panel panel-success">
                 <div class="panel-heading">
-                <h3 class="panel-title"><a href="{{ product.slug }}">{{ product.name }}</a>     ({{ product.price }})</h3>
+                <h3 class="panel-title"><a href="{{ product.slug }}">{{ product.name }}</a> </h3>
                 </div>
                 <div class="panel-body">
-                    {{ product.description }}
+                    <a href="{{ product.slug }}">View {{ product.name }}`s description and price</a>
                 </div>
             </div>
         {% endfor %}
