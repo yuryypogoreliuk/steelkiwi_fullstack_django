@@ -28,6 +28,7 @@ $ git clone https://github.com/yuryypogoreliuk/steelkiwi_fullstack_django
 Go into working dir and install project's requirements:
 
 ```bash
+$ cd steelkiwi_fullstack_django
 $ pip install -r requirements.txt
 ```
 You need to collect static files and migrate database:
