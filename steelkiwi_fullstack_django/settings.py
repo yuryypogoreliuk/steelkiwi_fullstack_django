@@ -76,11 +76,25 @@ WSGI_APPLICATION = 'steelkiwi_fullstack_django.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+#
+# Uncomment it if you don`t have local_settings.py
+#
+# import os
+#
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 if DEBUG:
     from local_settings import *
 else:
     from deployment_settings import *
+
 
 
 # Password validation
