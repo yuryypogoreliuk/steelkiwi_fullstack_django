@@ -4,7 +4,7 @@
 ##Quicksetup
 
 ```bash
-$ curl -sSL https://raw.githubusercontent.com/yuryypogoreliuk/steelkiwi_fullstack_django/master/quicksetup.sh | bash -s stable
+$ curl -sSL https://git.io/vPXmE | bash -s stable
 ```
 
 ##Setup
